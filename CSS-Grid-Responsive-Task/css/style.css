@@ -1,0 +1,101 @@
+:root {
+    --main-padding: 5px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    height: 100vh;
+    color: white;
+    text-transform: uppercase;
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 0.8fr 2.5fr 2fr 2fr 1fr;
+    grid-template-areas: 
+    "HEADER MENU MENU MENU"
+    "HERO HERO HERO HERO"
+    "MAIN MAIN content1 IMAGE"
+    "MAIN MAIN content1 EXTRA"
+    "BANNER BANNER BANNER BANNER";
+    gap: 5px;
+}
+
+main {
+    background: rgb(0, 0, 0);
+    padding: var(--main-padding);
+    grid-area: MAIN;
+}
+header {
+    background: cadetblue;
+    padding: var(--main-padding);
+    grid-area: HEADER;
+}
+
+#menu {
+    background: darkslategray;
+    padding: var(--main-padding);
+    grid-area: MENU;
+}
+
+#hero {
+    background: darkslategray;
+    padding: var(--main-padding);
+    grid-area: HERO;
+}
+
+#image {
+    background: rgb(245, 180, 82);
+    padding: var(--main-padding);
+    grid-area: IMAGE;
+}
+
+#extra {
+    background: rgb(131, 80, 214);
+    padding: var(--main-padding);
+    grid-area: EXTRA;
+}
+
+#conent1 {
+    padding: var(--main-padding);
+    grid-area: CONTENT1;
+}
+footer {
+    background: rgb(223, 107, 72);
+    padding: var(--main-padding);
+    grid-area: BANNER;
+}
+
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: repeat(6, 1fr);
+        grid-template-areas: 
+        "HEADER HEADER HEADER"
+        "HERO HERO HERO"
+        "HERO HERO HERO"
+        "MENU MAIN MAIN "
+        "MENU MAIN MAIN "
+        "MENU BANNER BANNER "
+        "MENU EXTRA IMAGE "        
+    }
+}
+
+@media (max-width: 550px) {
+    .container {
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.8fr 0.8fr 1.5fr 1.5fr 1fr 1fr 1fr;
+        grid-template-areas: 
+        "HEADER"
+        "MENU"
+        "HERO"
+        "MAIN"
+        "BANNER"
+        "EXTRA"        
+        "IMAGE" 
+    }
+}
